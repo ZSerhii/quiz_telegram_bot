@@ -13,11 +13,11 @@ class Answer():
         return self.choices[self.user_answer]
 
     def display(self):
-        result = f'Your answer:\n{self.user_choice.key}) {self.user_choice.value}'
+        result = f'Your answer:\n{self.user_choice.key}) {self.user_choice.value}\n'
 
         if self.is_correct:
-            result = result + f'\n{ANSWER_EMOJI[1]} Congratulations! {ANSWER_EMOJI[3]}\n'
+            result = result + f'\n{ANSWER_EMOJI[1]} Congratulations! {ANSWER_EMOJI[3]}\n\n'
         else:
-            result = result + f'\n{ANSWER_EMOJI[0]} Sorry {ANSWER_EMOJI[2]} You are wrong...\n'
+            result = result + f'\n{ANSWER_EMOJI[0]} Sorry {ANSWER_EMOJI[2]} You are wrong...\n\n'
 
-        return result
+        return result + 'Input /next to get next question!'

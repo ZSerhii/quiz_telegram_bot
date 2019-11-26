@@ -106,7 +106,8 @@ class Questions():
 
 
 def render_question(update, question):
-    keyboard = [[], [InlineKeyboardButton("Next", callback_data='/next')]]
+    # keyboard = [[], [InlineKeyboardButton("Next", callback_data='/next')]]
+    keyboard = [[]]
 
     for choice in question.choices:
         answer = str(question.id) + '#' + str(choice.id)
@@ -114,5 +115,5 @@ def render_question(update, question):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text(question.display())
+    update.message.reply_markdown(question.display())
     update.message.reply_text('Please choose:', reply_markup=reply_markup)
